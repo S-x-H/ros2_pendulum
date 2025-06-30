@@ -2,13 +2,14 @@
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/temperature.hpp>
 
-#include <message_filters/subscriber.h>
-#include <message_filters/sync_policies/exact_time.h>
-#include <message_filters/synchronizer.h>
-#include <message_filters/time_synchronizer.h>
+#include <message_filters/subscriber.hpp>
+#include <message_filters/sync_policies/exact_time.hpp>
+#include <message_filters/synchronizer.hpp>
+#include <message_filters/time_synchronizer.hpp>
 #include <sensor_msgs/msg/time_reference.hpp>
 
-class Pendulum : public rclcpp::Node {
+class Pendulum : public rclcpp::Node
+{
 public:
   Pendulum();
 
@@ -27,15 +28,11 @@ private:
   rclcpp::Publisher<sensor_msgs::msg::Temperature>::SharedPtr angularPosPub_;
   rclcpp::Publisher<sensor_msgs::msg::Temperature>::SharedPtr angularVelPub_;
 
-  using ClockTorquePolicy =
-      message_filters::sync_policies::ExactTime<sensor_msgs::msg::TimeReference,
-                                                sensor_msgs::msg::Temperature>;
+  using ClockTorquePolicy = message_filters::sync_policies::ExactTime<sensor_msgs::msg::TimeReference, sensor_msgs::msg::Temperature>;
   using ClockTorqueSync = message_filters::Synchronizer<ClockTorquePolicy>;
-  message_filters::Subscriber<sensor_msgs::msg::TimeReference>
-      clockSubFilt_;
+  message_filters::Subscriber<sensor_msgs::msg::TimeReference> clockSubFilt_;
   message_filters::Subscriber<sensor_msgs::msg::Temperature> torqueSubFilt_;
-  std::shared_ptr<message_filters::Synchronizer<ClockTorquePolicy>>
-      clockTorqueFilter_;
+  std::shared_ptr<message_filters::Synchronizer<ClockTorquePolicy>> clockTorqueFilter_;
 
   std::optional<builtin_interfaces::msg::Time> lastTime_;
 
