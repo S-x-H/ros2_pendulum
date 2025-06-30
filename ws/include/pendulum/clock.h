@@ -1,7 +1,8 @@
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/time_reference.hpp>
 
-class Clock : public rclcpp::Node {
+class Clock : public rclcpp::Node
+{
 public:
   Clock();
 
