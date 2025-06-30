@@ -17,7 +17,7 @@ Where:
 - $\tau$ is the torque applied
 - $g$ is ccceleration due to gravity
 
-This ROS2 Kitled package simulates a system using a Forward-Euler integration scheme with a time-step of 1ms (pendulum rest state at 0).
+This ROS2 Kilted package simulates a system using a Forward-Euler integration scheme with a time-step of 1ms (pendulum rest state at 0).
 
 ## Implementation
 
