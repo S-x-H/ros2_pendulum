@@ -7,7 +7,7 @@ $$
 $$
 
 $$
-\dot{\theta}_2 = -\frac{g}{l} \sin(\theta_1) + \frac{1}{ml^2} \tau \tag{1}
+\dot{\theta}_2 = -\frac{g}{l} \sin(\theta_1) + \frac{1}{ml^2} \tau
 $$
 
 Where:
